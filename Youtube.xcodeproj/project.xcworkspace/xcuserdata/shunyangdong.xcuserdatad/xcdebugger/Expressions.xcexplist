@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CollectionViewController.collectionView(_:layout:sizeForItemAt:):CollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CollectionViewController.viewDidLoad():CollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.frame.height">
+            </PersistentString>
+            <PersistentString
+               value = "teststr">
+            </PersistentString>
+            <PersistentString
+               value = "view.frame.width ">
+            </PersistentString>
+            <PersistentString
+               value = "range">
+            </PersistentString>
+            <PersistentString
+               value = " UIApplication.shared.statusBarFrame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "VideoCell.video.didset:VideoCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "video">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
