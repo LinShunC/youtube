@@ -8,6 +8,13 @@
 
 import UIKit
 import AVFoundation
+class Playback: NSObject {
+    let playbackSpeed:NSNumber
+    
+    init(playbackSpeed:NSNumber) {
+        self.playbackSpeed = playbackSpeed
+    }
+}
 
 
 class VideoPlayerView: UIView {
@@ -37,6 +44,16 @@ class VideoPlayerView: UIView {
         return view
     }()
     
+    let playbackButton : UIButton =
+    {
+        let button = UIButton()
+        let image = UIImage(named: "nav_more_icon")
+         button.setImage(image, for: .normal)
+        button.addTarget(self, action: #selector(handlePlayback), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+        
+    }()
     let videoLengthLabel: UILabel =
     {
         let label = UILabel()
@@ -81,6 +98,7 @@ class VideoPlayerView: UIView {
             })
         }
     }
+    
     @objc func handlePause (){
         
         if isPlaying {
@@ -93,6 +111,22 @@ class VideoPlayerView: UIView {
         
         isPlaying = !isPlaying
         
+    }
+    lazy var playbackLauncher : PlaybackLauncher =
+       {
+          let launcher = PlaybackLauncher()
+          launcher.videoPlayerView = self
+          return launcher
+    }()
+    @objc func handlePlayback()
+    {
+        playbackLauncher.showPlayback()
+    
+    }
+    
+    func changePlayback(playback:Playback)
+    {
+        player?.rate =  Float(playback.playbackSpeed)
     }
     override init(frame: CGRect) {
         super.init(frame:frame)
@@ -111,9 +145,21 @@ class VideoPlayerView: UIView {
         pausePlayButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         pausePlayButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        
+        // playback button
+         controlsContainerView.addSubview(playbackButton)
+        playbackButton.rightAnchor.constraint(equalTo: rightAnchor,constant: -2).isActive = true
+        playbackButton.bottomAnchor.constraint(equalTo: bottomAnchor,constant:  -2).isActive = true
+        
+        playbackButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        playbackButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+       
+        
+        
         controlsContainerView.addSubview(videoLengthLabel)
-        videoLengthLabel.rightAnchor.constraint(equalTo: rightAnchor,constant: -4).isActive = true
+        videoLengthLabel.rightAnchor.constraint(equalTo: playbackButton.leftAnchor,constant: 4).isActive = true
         videoLengthLabel.bottomAnchor.constraint(equalTo: bottomAnchor,constant:  -2).isActive = true
+        
         videoLengthLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
         videoLengthLabel.heightAnchor.constraint(equalToConstant: 24).isActive = true
         
@@ -150,6 +196,9 @@ class VideoPlayerView: UIView {
             player?.play()
             // check if the video is play
             player?.addObserver(self, forKeyPath: "currentItem.loadedTimeRanges", options: .new, context: nil)
+            // change the rate will change the speed of the video
+            //player?.rate = 0.5;
+            
             // track player progress
             let interval = CMTime(value: 1, timescale: 2)
             player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (progressTime) in
@@ -164,6 +213,7 @@ class VideoPlayerView: UIView {
                     let durationSeconds = CMTimeGetSeconds(duration)
                     
                     self.videoSlider.value = Float(seconds / durationSeconds)
+                
                     
                 }
                 

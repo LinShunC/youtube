@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230A8C8C24EE3FD2001C3623 /* playbackLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A8C8B24EE3FD2001C3623 /* playbackLauncher.swift */; };
+		230A8C8E24EE46BD001C3623 /* playbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A8C8D24EE46BD001C3623 /* playbackCell.swift */; };
 		232EC46624C17B9C0008DDBC /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232EC46524C17B9C0008DDBC /* extensions.swift */; };
 		232EC46924C19F120008DDBC /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232EC46824C19F120008DDBC /* NavigationViewController.swift */; };
 		2360D00224C037DB006DBA72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2360D00124C037DB006DBA72 /* AppDelegate.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		230A8C8B24EE3FD2001C3623 /* playbackLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playbackLauncher.swift; sourceTree = "<group>"; };
+		230A8C8D24EE46BD001C3623 /* playbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playbackCell.swift; sourceTree = "<group>"; };
 		232EC46524C17B9C0008DDBC /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		232EC46824C19F120008DDBC /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		2360CFFE24C037DB006DBA72 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +190,8 @@
 				2397323D24D2937D0019514C /* FeedCell.swift */,
 				23CF02B024D3EE7800883230 /* TrendingCell.swift */,
 				23CF02B224D3F2E400883230 /* SubscriptionCell.swift */,
+				230A8C8B24EE3FD2001C3623 /* playbackLauncher.swift */,
+				230A8C8D24EE46BD001C3623 /* playbackCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,7 +354,9 @@
 				23CF02B524D693AA00883230 /* VideoLauncher.swift in Sources */,
 				23CF02B324D3F2E400883230 /* SubscriptionCell.swift in Sources */,
 				2360D07524C07F67006DBA72 /* VideoCell.swift in Sources */,
+				230A8C8C24EE3FD2001C3623 /* playbackLauncher.swift in Sources */,
 				23D50D2024C437E200208A8D /* Video.swift in Sources */,
+				230A8C8E24EE46BD001C3623 /* playbackCell.swift in Sources */,
 				23D02B4E24C2C241003F766C /* MenuBar.swift in Sources */,
 				23D7467824CD1F04008F815A /* SettingCell.swift in Sources */,
 				2360D00424C037DB006DBA72 /* SceneDelegate.swift in Sources */,
